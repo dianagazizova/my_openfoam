@@ -1,0 +1,46 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2106                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _7b82832f-20210625 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : polymerSolidFoam
+Date   : May 19 2022
+Time   : 12:25:11
+Host   : 3eea587c3c13
+PID    : 361
+I/O    : uncollated
+Case   : /home/openfoam/run/SLA/plateSLA
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+SIMPLE: convergence criteria
+    field D	 tolerance 1e-05
+
+Reading polymerProperties
+ -- Laser exposure = 1373.49
+Reading field D
+
+
+
+--> FOAM FATAL IO ERROR: (openfoam-2106)
+Entry 'stiffnessFactor' not found in dictionary "/home/openfoam/run/SLA/plateSLA/constant/polymerProperties"
+
+file: /home/openfoam/run/SLA/plateSLA/constant/polymerProperties at line 20 to 33.
+
+    From bool Foam::dimensioned<Type>::readEntry(const Foam::word&, const Foam::dictionary&, bool, bool, Foam::keyType::option) [with Type = double]
+    in file /usr/lib/openfoam/openfoam2106/src/OpenFOAM/lnInclude/dimensionedType.C at line 100.
+
+FOAM exiting
+

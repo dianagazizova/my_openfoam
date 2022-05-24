@@ -1,0 +1,5 @@
+SOURCE = \
+polymerSolidFoam.C \
+zeroTraction/zeroTractionFvPatchVectorField.C \
+
+# sources

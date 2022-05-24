@@ -1,0 +1,76 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2106                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _7b82832f-20210625 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : blockMesh
+Date   : May 19 2022
+Time   : 12:25:10
+Host   : 3eea587c3c13
+PID    : 355
+I/O    : uncollated
+Case   : /home/openfoam/run/SLA/plateSLA
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from "system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list (topological search)...
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 0.001
+    Block 0 cell size :
+        i : 2.80764e-05 .. 2.80764e-05
+        j : 1.01725e-05 .. 1.01725e-05
+        k : 1e-05 .. 1e-05
+
+
+There are no merge patch pairs
+
+Writing polyMesh with 0 cellZones
+----------------
+Mesh Information
+----------------
+  boundingBox: (-0.005 -0.001 0) (0.005 0.001 0.0005)
+  nPoints: 25296
+  nCells: 22500
+  nFaces: 70200
+  nInternalFaces: 64800
+----------------
+Patches
+----------------
+  patch 0 (start: 64800 size: 450) name: bottom
+  patch 1 (start: 65250 size: 450) name: top
+  patch 2 (start: 65700 size: 3000) name: frontAndBack
+  patch 3 (start: 68700 size: 750) name: left
+  patch 4 (start: 69450 size: 750) name: right
+
+End
+

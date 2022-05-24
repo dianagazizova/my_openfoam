@@ -1,0 +1,76 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2106                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _7b82832f-20210625 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : blockMesh
+Date   : May 19 2022
+Time   : 12:06:43
+Host   : 289f6b588afd
+PID    : 405
+I/O    : uncollated
+Case   : /home/openfoam/run/SLA/2D_SLA
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from "system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list (topological search)...
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 1 .. 1
+        j : 1 .. 1
+        k : 1 .. 1
+
+
+There are no merge patch pairs
+
+Writing polyMesh with 0 cellZones
+----------------
+Mesh Information
+----------------
+  boundingBox: (-0.5 -0.5 0) (0.5 0.5 4)
+  nPoints: 20
+  nCells: 4
+  nFaces: 21
+  nInternalFaces: 3
+----------------
+Patches
+----------------
+  patch 0 (start: 3 size: 1) name: bottom
+  patch 1 (start: 4 size: 1) name: top
+  patch 2 (start: 5 size: 8) name: frontAndBack
+  patch 3 (start: 13 size: 4) name: left
+  patch 4 (start: 17 size: 4) name: right
+
+End
+

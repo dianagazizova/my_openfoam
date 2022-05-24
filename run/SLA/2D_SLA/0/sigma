@@ -1,0 +1,52 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2106                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       volSymmTensorField;
+    location    "0";
+    object      sigma;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   nonuniform List<symmTensor> 4((-4.5e+09 0 0 -4.5e+09 0 -4.5e+09) (-4.5e+09 0 0 -4.5e+09 0 -4.5e+09) (0 0 0 0 0 0) (0 0 0 0 0 0));
+
+boundaryField
+{
+    bottom
+    {
+        type            calculated;
+        value           uniform (-4.5e+09 0 0 -4.5e+09 0 -4.5e+09);
+    }
+    top
+    {
+        type            calculated;
+        value           uniform (0 0 0 0 0 0);
+    }
+    frontAndBack
+    {
+        type            empty;
+    }
+    left
+    {
+        type            calculated;
+        value           nonuniform List<symmTensor> 4((-4.5e+09 0 0 -4.5e+09 0 -4.5e+09) (-4.5e+09 0 0 -4.5e+09 0 -4.5e+09) (0 0 0 0 0 0) (0 0 0 0 0 0));
+    }
+    right
+    {
+        type            calculated;
+        value           nonuniform List<symmTensor> 4((-4.5e+09 0 0 -4.5e+09 0 -4.5e+09) (-4.5e+09 0 0 -4.5e+09 0 -4.5e+09) (0 0 0 0 0 0) (0 0 0 0 0 0));
+    }
+}
+
+
+// ************************************************************************* //

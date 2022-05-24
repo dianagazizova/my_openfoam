@@ -1,0 +1,251 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2106                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _7b82832f-20210625 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : polymerSolidFoam
+Date   : May 19 2022
+Time   : 11:48:02
+Host   : 2765f3fa34ee
+PID    : 403
+I/O    : uncollated
+Case   : /home/openfoam/run/SLA/1D_SLA
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+SIMPLE: convergence criteria
+    field D	 tolerance 1e-08
+
+Reading polymerProperties
+ -- Laser exposure = 13989.2
+Reading field D
+
+Calculating mechanical properties
+
+NUMBER OF LAYERS: 2 [0 0 0 0 0 0 0] 2
+
+LAYER NUMBER: 1
+Calculating polymerization field
+
+hi
+Calculating Lame's coefficients
+
+Calculating explicit part of div(sigma) divSigmaExp
+
+
+SIMPLE: convergence criteria
+    field D	 tolerance 1e-08
+
+
+Calculating displacement field
+
+Iteration: 1
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 1, Final residual = 0.388889, No Iterations 1
+ExecutionTime = 0.03 s  ClockTime = 0 s
+
+Iteration: 2
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 0.0668258, Final residual = 0.0199549, No Iterations 1
+ExecutionTime = 0.03 s  ClockTime = 0 s
+
+Iteration: 3
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 0.015802, Final residual = 0.00471865, No Iterations 1
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+Iteration: 4
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 0.00444256, Final residual = 0.0013266, No Iterations 1
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+Iteration: 5
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 0.00130382, Final residual = 0.000389334, No Iterations 1
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+Iteration: 6
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 0.000387348, Final residual = 0.000115666, No Iterations 1
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+Iteration: 7
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 0.000115491, Final residual = 3.44868e-05, No Iterations 1
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+Iteration: 8
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 3.44711e-05, Final residual = 1.02935e-05, No Iterations 1
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+Iteration: 9
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 1.02921e-05, Final residual = 3.07332e-06, No Iterations 1
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+Iteration: 10
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 3.0732e-06, Final residual = 9.17691e-07, No Iterations 1
+ExecutionTime = 0.09 s  ClockTime = 0 s
+
+Iteration: 11
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 9.1768e-07, Final residual = 2.7403e-07, No Iterations 1
+ExecutionTime = 0.09 s  ClockTime = 0 s
+
+Iteration: 12
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 2.74029e-07, Final residual = 8.1828e-08, No Iterations 1
+ExecutionTime = 0.1 s  ClockTime = 0 s
+
+Iteration: 13
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 8.18279e-08, Final residual = 2.44347e-08, No Iterations 1
+ExecutionTime = 0.1 s  ClockTime = 0 s
+
+Iteration: 14
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 2.44347e-08, Final residual = 7.29648e-09, No Iterations 1
+ExecutionTime = 0.11 s  ClockTime = 0 s
+
+Iteration: 15
+
+creating matrix for the layer 1
+GAMG:  Solving for Dz, Initial residual = 7.29647e-09, Final residual = 2.17881e-09, No Iterations 1
+ExecutionTime = 0.11 s  ClockTime = 0 s
+
+
+SIMPLE solution converged in 15 iterations
+
+
+LAYER NUMBER: 2
+Calculating polymerization field
+
+hi
+Calculating Lame's coefficients
+
+Calculating explicit part of div(sigma) divSigmaExp
+
+
+SIMPLE: convergence criteria
+    field D	 tolerance 1e-08
+
+
+Calculating displacement field
+
+Iteration: 16
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 0.147059, Final residual = 0.00490196, No Iterations 1
+ExecutionTime = 0.12 s  ClockTime = 0 s
+
+Iteration: 17
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 0.0609982, Final residual = 0.00458256, No Iterations 1
+ExecutionTime = 0.12 s  ClockTime = 0 s
+
+Iteration: 18
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 0.00480879, Final residual = 0.00132268, No Iterations 1
+ExecutionTime = 0.12 s  ClockTime = 0 s
+
+Iteration: 19
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 0.0013428, Final residual = 0.000400975, No Iterations 1
+ExecutionTime = 0.12 s  ClockTime = 0 s
+
+Iteration: 20
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 0.000403104, Final residual = 0.000120371, No Iterations 1
+ExecutionTime = 0.12 s  ClockTime = 0 s
+
+Iteration: 21
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 0.000120562, Final residual = 3.60013e-05, No Iterations 1
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Iteration: 22
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 3.60184e-05, Final residual = 1.07555e-05, No Iterations 1
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Iteration: 23
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 1.0757e-05, Final residual = 3.21216e-06, No Iterations 1
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Iteration: 24
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 3.2123e-06, Final residual = 9.59228e-07, No Iterations 1
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Iteration: 25
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 9.5924e-07, Final residual = 2.8644e-07, No Iterations 1
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Iteration: 26
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 2.86441e-07, Final residual = 8.55344e-08, No Iterations 1
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Iteration: 27
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 8.55345e-08, Final residual = 2.55416e-08, No Iterations 1
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Iteration: 28
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 2.55416e-08, Final residual = 7.62699e-09, No Iterations 1
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+Iteration: 29
+
+creating matrix for the layer 2
+GAMG:  Solving for Dz, Initial residual = 7.627e-09, Final residual = 2.27751e-09, No Iterations 1
+ExecutionTime = 0.13 s  ClockTime = 0 s
+
+
+SIMPLE solution converged in 29 iterations
+
+End
+
