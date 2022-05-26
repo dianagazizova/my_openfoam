@@ -59,7 +59,8 @@ int main(int argc, char *argv[])
     //Stereolithography
     const volVectorField coord = mesh.C();
     const volScalarField Z = coord.component(2);
-
+    const surfaceVectorField coordf = mesh.Cf();
+    const surfaceScalarField Zf = coordf.component(2);
     const boundBox& bounds = mesh.bounds();
     const dimensionedScalar ymin("ymin", dimLength, bounds.min().y());
     const dimensionedScalar ymax("ymax", dimLength, bounds.max().y());
@@ -105,18 +106,24 @@ int main(int argc, char *argv[])
             DEqn.solve();
 
             gradD = fvc::grad(D); // D on the current layer
-            sigma = mu*twoSymm(gradD) + lambda*I*tr(gradD - epsilonResidual) - 2*mu*epsilonResidual
-                  - threeK*epsilonChemicalMax/pMax*polymerization*I;
+            sigma = mu*twoSymm(gradD) + lambda*I*tr(gradD) -
+                    threeK*epsilonChemicalMax/pMax*polymerization*I;
 
             divSigmaExp = fvc::div(sigma - (2*mu + lambda)*gradD, "div(sigma)");
+            if (i > 1)
+            {
+                divSigmaExp -=
+                (lambda + 2*mu)*fvc::div(epsilonf*mesh.magSf()*pos0(Zf - laser.height(i - 1)));
+            }
             runTime.printExecutionTime(Info);
         }
         runTime.stopAt(Foam::Time::stopAtControls::saEndTime);
         runTime.setEndTime(endOfTime);
         epsilon = symm(gradD);
         epsilon.write();
-        epsilonResidual.write();
+        //epsilonResidual.write();
         runTime.writeNow();
+        epsilonf = -fvc::snGrad(D);
     }
     //#include "deformations.H"
 

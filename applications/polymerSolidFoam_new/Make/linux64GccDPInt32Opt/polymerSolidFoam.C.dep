@@ -838,6 +838,5 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/createPimpleControl.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/createSimpleControl.H \
 createFields.H \
 createNewLayer.H \
-deformations.H \
 
 #END

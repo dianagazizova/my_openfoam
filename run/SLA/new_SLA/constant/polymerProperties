@@ -28,9 +28,7 @@ penetrationDepth        [m]     80e-6;
 // Mechanical properties
 
 nu                  0.32;
-//nu                  0.0;
 epsilonChemicalMax  -0.14;
-interlayerCohesion  0.05;
 
 Emax                    [Pa]    0.9e9;
 stiffnessFactor     0.001;

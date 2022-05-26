@@ -1,5 +1,13 @@
 //Stereolithography
- volScalarField totalExposure = volScalarField::New
+volScalarField exposure = volScalarField::New
+(
+    "exposure",
+    mesh,
+    dimensionedScalar(dimEnergy/dimArea, 0)
+);
+
+
+volScalarField totalExposure = volScalarField::New
 (
     "totalExposure",
     mesh,
@@ -40,9 +48,6 @@ IOdictionary polymerProperties
     )
 );
 
-//const scalar pGel(polymerProperties.get<scalar>("pGel"));
-//const scalar pMax(polymerProperties.get<scalar>("pMax"));
-
 const dimensionedScalar Ec("criticalExposure", totalExposure.dimensions(), polymerProperties);
 const dimensionedScalar Dp("penetrationDepth", dimLength, polymerProperties);
 
@@ -64,9 +69,10 @@ volVectorField D
     ),
     mesh
 );
+volTensorField gradD(fvc::grad(D));
 
 const dimensionedScalar Emax("Emax", dimPressure, polymerProperties);
-//const dimensionedScalar e0("stiffnessFactor", dimless, polymerProperties);
+const dimensionedScalar e0("stiffnessFactor", dimless, polymerProperties);
 const dimensionedScalar epsilonChemicalMax("epsilonChemicalMax", dimless, polymerProperties);
 
 Info<< "Calculating mechanical properties\n" << endl;
@@ -85,6 +91,10 @@ volScalarField nu = volScalarField::New
     dimensionedScalar("nu", dimless, polymerProperties)
 );
 
+volScalarField mu(E/(2.0*(1.0 + nu)));
+volScalarField lambda(nu*E/((1.0 + nu)*(1.0 - 2.0*nu)));
+volScalarField threeK(E/(1.0 - 2.0*nu));
+
 volSymmTensorField sigma
 (
     IOobject
@@ -98,35 +108,20 @@ volSymmTensorField sigma
     mesh,
     E.dimensions()
 );
-
 sigma.write();
 
-volSymmTensorField epsilonResidual = volSymmTensorField::New
+/*volSymmTensorField epsilonResidual = volSymmTensorField::New
 (
     "epsilonResidual",
     mesh,
     dimless
 );
-
 epsilonResidual =  symm(fvc::grad(D));
-
-/*volScalarField sigmaEq
-(
-    IOobject
-    (
-        "sigmaEq",
-        runTime.timeName(),
-        mesh,
-        IOobject::NO_READ,
-        IOobject::AUTO_WRITE
-    ),
-    mesh,
-    sigma.dimensions()
-);
 */
 
 volSymmTensorField epsilon("epsilon", symm(fvc::grad(D)));
 epsilon.write();
+surfaceVectorField epsilonf("epsilonf", fvc::snGrad(D));
 
 mesh.setFluxRequired(D.name());
 
