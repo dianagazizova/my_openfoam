@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
     const scalar pGel(polymerProperties.get<scalar>("pGel"));
     const scalar pMax(polymerProperties.get<scalar>("pMax"));
 
-    for (label i = 1; i <= numberOfLayers.value(); i++)
+    for (label i = 1; i <= 2; i++)
     {
         Info<< endl << "LAYER NUMBER: " << i << endl;
         #include "createNewLayer.H"
@@ -112,8 +112,8 @@ int main(int argc, char *argv[])
             divSigmaExp = fvc::div(sigma - (2*mu + lambda)*gradD, "div(sigma)");
             if (i > 1)
             {
-                divSigmaExp -=
-                (lambda + 2*mu)*fvc::div(epsilonf*mesh.magSf()*pos0(Zf - laser.height(i - 1)));
+                divSigmaExp += fvc::laplacian(pos0(Zf - laser.height(i - 1))*(lambdaf + 2*muf),
+                D_old, "laplacian(DD,D)");
             }
             runTime.printExecutionTime(Info);
         }
@@ -123,7 +123,8 @@ int main(int argc, char *argv[])
         epsilon.write();
         //epsilonResidual.write();
         runTime.writeNow();
-        epsilonf = -fvc::snGrad(D);
+        //epsilonf = -fvc::snGrad(D);
+        D_old = D;
     }
     //#include "deformations.H"
 

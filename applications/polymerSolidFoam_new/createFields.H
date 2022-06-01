@@ -70,6 +70,7 @@ volVectorField D
     mesh
 );
 volTensorField gradD(fvc::grad(D));
+volVectorField D_old = D;
 
 const dimensionedScalar Emax("Emax", dimPressure, polymerProperties);
 const dimensionedScalar e0("stiffnessFactor", dimless, polymerProperties);
@@ -94,6 +95,9 @@ volScalarField nu = volScalarField::New
 volScalarField mu(E/(2.0*(1.0 + nu)));
 volScalarField lambda(nu*E/((1.0 + nu)*(1.0 - 2.0*nu)));
 volScalarField threeK(E/(1.0 - 2.0*nu));
+
+surfaceScalarField muf = fvc::interpolate(mu);
+surfaceScalarField lambdaf = fvc::interpolate(lambda);
 
 volSymmTensorField sigma
 (
@@ -122,6 +126,7 @@ epsilonResidual =  symm(fvc::grad(D));
 volSymmTensorField epsilon("epsilon", symm(fvc::grad(D)));
 epsilon.write();
 surfaceVectorField epsilonf("epsilonf", fvc::snGrad(D));
+symmTensor Ixy = symmTensor::I; Ixy.zz() = 0;
 
 mesh.setFluxRequired(D.name());
 
